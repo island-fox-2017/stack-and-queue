@@ -4,7 +4,7 @@
 class Stack {
   constructor(max) {
     this.max = max
-    this.arr=[]
+    this.arr = []
   }
 
   size() {
@@ -12,18 +12,18 @@ class Stack {
   }
 
   stackPush(x) {
-    if(this.isFull()){
-      return 'Data is full'
-    }else {
+    if (this.isFull()) {
+      return 'Box is full'
+    } else {
       this.arr.push(x)
       return `${x} has been inputed`
     }
   }
 
   stackPop() {
-    if(this.isEmpty()){
+    if (this.isEmpty()) {
       return 'Box is empty'
-    }else 
+    } else
       return this.arr.pop('')
   }
 
@@ -32,7 +32,7 @@ class Stack {
   }
 
   last() {
-    return this.arr[this.arr.length-1]
+    return this.arr[this.arr.length - 1]
   }
 
   isEmpty() {
