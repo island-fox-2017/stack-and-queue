@@ -4,6 +4,7 @@
 class Stack {
   constructor() {
     this.array = [];
+    this.max = 5;
   }
 
   size() {
@@ -11,7 +12,14 @@ class Stack {
   }
 
   stackPush(x) {
-    this.array.push(x);
+    if(this.size() < this.max)
+    {
+        this.array.push(x);
+    }
+    else {
+      console.log('Stack is full');
+    }
+
   }
 
   stackPop() {
@@ -33,6 +41,13 @@ class Stack {
   }
 
   isFull() {
+    if(this.size() == this.max)
+    {
+      return true;
+    }
+    else {
+      return false;
+    }
 
   }
 
@@ -55,8 +70,12 @@ myStack.stackPush('is just so');
 myStack.stackPush('cool');
 
 myStack.stackPush(15);
+myStack.stackPush(15);
+myStack.stackPush(15);
 
 myStack.stackPeep();
+
+console.log(myStack.isFull());
 console.log(myStack.allArray());
 
 console.log(myStack.stackPop());
