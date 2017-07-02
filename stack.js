@@ -56,23 +56,26 @@ console.log(stack.stackPush('Item 2'))
 console.log(stack.stackPush('Item 3'))
 console.log(stack.stackPush('Item 4'))
 
+console.log(stack.stackPop());
+console.log(stack);
 
-console.log(`The Stack is full? \n ${stack.isFull()}`);
-console.log(`You cannot add item because ${stack.stackPush('Item 5')}`)
 
-console.log(`First item inputed ${stack.first()}`);
-console.log(`Last item inputed ${stack.last()}`);
-
-console.log("==============================================");
-
-console.log(`Out item from the box ${stack.stackPop('Item 4')}`);
-
-console.log(`The Stack is full? \n ${stack.isFull()}`);
-console.log(`${stack.stackPush('Item 5')}`)
-
-console.log(`The Stack is full? \n ${stack.isFull()}`);
-
-console.log(`First item inputed ${stack.first()}`);
-console.log(`Last item inputed ${stack.last()}`);
+// console.log(`The Stack is full? \n ${stack.isFull()}`);
+// console.log(`You cannot add item because ${stack.stackPush('Item 5')}`)
+// 
+// console.log(`First item inputed ${stack.first()}`);
+// console.log(`Last item inputed ${stack.last()}`);
+// 
+// console.log("==============================================");
+// 
+// console.log(`Out item from the box ${stack.stackPop('Item 4')}`);
+// 
+// console.log(`The Stack is full? \n ${stack.isFull()}`);
+// console.log(`${stack.stackPush('Item 5')}`)
+// 
+// console.log(`The Stack is full? \n ${stack.isFull()}`);
+// 
+// console.log(`First item inputed ${stack.first()}`);
+// console.log(`Last item inputed ${stack.last()}`);
 
 module.exports = Stack

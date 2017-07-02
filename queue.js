@@ -24,7 +24,7 @@ class Queue {
     if(this.isEmpty()){
       return 'Box is empty'
     } else
-    return this.arr.pop('')
+    return this.arr.shift('')
   }
 
   first() {
@@ -54,14 +54,17 @@ console.log(`Input to the box ${queue.queueInsert('Item 1')}`)
 console.log(`Input to the box ${queue.queueInsert('Item 2')}`)
 console.log(`Input to the box ${queue.queueInsert('Item 3')}`)
 
-console.log(`The queue is empty? \n ${queue.isFull()}`);
-console.log(`The First queue is filled with ${queue.first()}`);
-console.log(`The Last queue is filled with ${queue.last()}`);
+console.log(queue.queueRemove());
+console.log(queue);
 
-console.log("==============================================");
-
-console.log(`Remove queue? ${queue.queueRemove()}`);
-console.log(`The queue is full? ${queue.isFull()}`);
-
+// console.log(`The queue is empty? \n ${queue.isFull()}`);
+// console.log(`The First queue is filled with ${queue.first()}`);
+// console.log(`The Last queue is filled with ${queue.last()}`);
+// 
+// console.log("==============================================");
+// 
+// console.log(`Remove queue? ${queue.queueRemove()}`);
+// console.log(`The queue is full? ${queue.isFull()}`);
+// 
 
 module.exports = Queue
