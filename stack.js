@@ -12,7 +12,7 @@ class Stack {
   }
 
   stackPush(x) {
-    if(isFull){return "daya tampung sudah maximal";}
+    if(this.stackArr.length == this.kapasitas){return "daya tampung sudah maximal";}
     else {return this.stackArr.push(x);}
   }
 
