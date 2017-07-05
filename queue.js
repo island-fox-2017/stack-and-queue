@@ -11,11 +11,13 @@ class Queue {
   }
 
   queueInsert(x) {
-    return this.archive.push(x);
+    if(this.isFull()){console.log('data full')}
+    else {return this.archive.push(x)};
   }
 
   queueRemove() {
-    return this.archive.shift();
+    if(this.isEmpty()) {console.log('data empty')}
+    else {return this.archive.shift()};
   }
 
   first() {
@@ -36,7 +38,8 @@ class Queue {
   }
 
   isFull() {
-    return this.maximum === this.archive.length;
+    if(this.archive.length === this.maximum) {return true}
+    else {return false};
   }
 
   queuePeek() {
@@ -50,6 +53,7 @@ let myQueue = new Queue (5);
 console.log(`The queue is empty? ${myQueue.isEmpty()}`); //true
 
 //tambahkan data
+console.log(myQueue.queueRemove());
 myQueue.queueInsert("JavaScript")
 myQueue.queueInsert("is just so")
 myQueue.queueInsert("cool")

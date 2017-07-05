@@ -12,11 +12,14 @@ class Stack {
   }
 
   stackPush(x) {
-    return this.archive.push(x);
+    if(this.isFull()){console.log('data full')}
+    else {return this.archive.push(x);}
+
   }
 
   stackPop() {
-    return this.archive.pop();
+    if(this.isEmpty()) {console.log('data empty')}
+    else {return this.archive.pop();}
   }
 
   first() {
@@ -37,7 +40,8 @@ class Stack {
   }
 
   isFull() {
-    return this.maximum === this.archive.length;
+    if(this.archive.length === this.maximum) {return true}
+    else {return false};
   }
 
   stackPeek() {
@@ -54,7 +58,9 @@ console.log(`The stack is empty? ${myStack.isEmpty()}`); //true
 myStack.stackPush("JavaScript")
 myStack.stackPush("is just so")
 myStack.stackPush("cool")
-
+myStack.stackPush("cool")
+myStack.stackPush("cool")
+myStack.stackPush("cool")
 //cek isi data
 console.log(myStack.archive);
 
