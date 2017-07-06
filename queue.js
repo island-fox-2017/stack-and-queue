@@ -3,6 +3,7 @@
 class Queue {
   constructor () {
     this.datas = [];
+    this.maxDatas = 3;
   }
 
   size() {
@@ -10,11 +11,21 @@ class Queue {
   }
 
   queueInsert(x) {
-    this.datas.push(x);
+    if (this.isFull()) {
+      return `Data Udah Full`
+    } else {
+        this.datas.push(x);
+    }
+
   }
 
   queueRemove() {
-    this.datas.shift();
+    if(this.datas.length == 0) {
+        return 'tidak ada data'
+    } else {
+      this.datas.shift();
+    }
+
   }
 
   first() {
@@ -34,6 +45,9 @@ class Queue {
   }
 
   isFull() {
+    if(this.datas.length == this.maxDatas) {
+      return true
+    }
   }
 
   queuePeek() {
@@ -52,6 +66,7 @@ console.log(`The queue is empty? ${myQueue.isEmpty()}`);
 myQueue.queueInsert('JavaScript');
 myQueue.queueInsert('is just so');
 myQueue.queueInsert('cool');
+console.log(myQueue.queueInsert('cool'));
 /*
   karna queue menggunakan array,
   kita bisa add tipe data apapun seperti string dan integer
@@ -64,6 +79,7 @@ myQueue.queueRemove();
 myQueue.queueRemove();
 myQueue.queueRemove();
 myQueue.queueRemove();
+console.log(myQueue.queueRemove());
 //cek lagi apakah stack-nya beneran kosong?
 console.log(`The queue is empty? ${myQueue.isEmpty()}`);
 //coba hapus stack kosong, apa yang terjadi?
