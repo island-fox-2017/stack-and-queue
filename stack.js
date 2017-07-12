@@ -2,28 +2,38 @@
 
 // Your code implementation
 class Stack {
-  constructor() {
-    this.stack = []
+  constructor(maxKapasitas) {
+    this.stack = [];
+    this.maxKapasitas = maxKapasitas
   }
 
   size() {
     return this.stack.length
   }
 
-
   stackPush(x) {
-    this.stack.push(x)
+    if (this.isFull()) {
+       console.log('Array Full');
+    }else {
+        this.stack.push(x)
+    }
+
   }
 
   stackPop() {
-     return this.stack.pop()
-
+      if(this.isEmpty()){
+        return 'Kalau kosong tidak bisa di pop silahkan isi arraynya yah'
+      }else {
+        return this.stack.pop()
+      }
   }
 
   first() {
+    return this.stack[0]
   }
 
   last() {
+    return this.stack[this.size-1]
   }
 
   isEmpty() {
@@ -35,14 +45,20 @@ class Stack {
   }
 
   isFull() {
+    if(this.size() == this.maxKapasitas){
+      return true
+    }else {
+      return false
+    }
   }
 
   stackPeep() {
     console.log(this.stack[this.stack.length-1])
   }
 }
-let myStack = new Stack();
+let myStack = new Stack(3);
 console.log(`The Stack is empty? ${myStack.isEmpty()}`);
+console.log(myStack.stackPop())
 
 myStack.stackPush('Javascript');
 myStack.stackPush('is just so');

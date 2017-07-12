@@ -1,12 +1,21 @@
 'use strict'
 
 class Queue {
-  constructor () {
+  constructor (maxKapasitas) {
     this.queue = []
+    this.maxKapasitas = maxKapasitas;
   }
   size() {
     return this.queue.length
   }
+  isFull() {
+    if(this.size() == this.maxKapasitas){
+      return true
+    }else {
+      return false
+    }
+  }
+
   isEmpty() {
     if(this.size()==0){
       return true
@@ -18,15 +27,24 @@ class Queue {
     console.log(this.queue)
   }
   queueInsert(input){
-    this.queue.push(input)
+    if (this.isFull()) {
+       console.log('Array Full');
+    }else {
+        this.queue.push(input)
+    }
   }
   queueRemove(){
-    return this.queue.shift()
+    if(this.isEmpty()){
+      return 'array sudah kosong'
+    }else {
+      return this.queue.shift()
+    }
+
   }
 
 }
 
-let myQueue = new Queue();
+let myQueue = new Queue(3);
 console.log(`The Stack is empty? ${myQueue.isEmpty()}`);
 
 myQueue.queueInsert('Javascript');
