@@ -6,11 +6,11 @@ class Stack {
     this.input = input;
     this.range = []
   }
-  size() { //ngukur panjang inputan
+  size() { 
     return this.range.length;
   }
-  stackPush(namaLengkap) { //data inputan
-    return this.range.push(namaLengkap);
+  stackPush(Data) { //data inputan
+    return this.range.push(Data);
   }
   stackPop() {//ngambil data inputan dari yg index.length-1
    return this.range.pop()
@@ -35,7 +35,7 @@ class Stack {
   }
 }
 var ukur = new Stack (2)
-console.log(ukur.size());
+
 ukur.stackPush("Ganang")
 ukur.stackPush("Wahyu")
 ukur.stackPush("Wicaksono")
@@ -46,4 +46,5 @@ console.log(ukur.last())
 console.log(ukur.isEmpty());
 console.log(ukur.isFull());
 console.log(ukur.stackPeep());
+console.log(ukur.size())
 module.exports = Stack

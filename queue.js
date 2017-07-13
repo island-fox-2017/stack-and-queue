@@ -4,16 +4,15 @@ class Queue {
   constructor (input) {
     this.input = input
     this.range = []
-
   }
   size() { //ngukur panjang inputan
   return this.range.length;
   }
-  stackPush(namaLengkap) { //data inputan
-  return this.range.push(namaLengkap);
+  queuePush(Data) { //data inputan
+  return this.range.push(Data);
   }
-  stackPop() {//ngambil data inputan dari yg index.length-1
-  return this.range.pop()
+  queueShift() {//ngambil data inputan dari yg index.length-1
+  return this.range.shift()
   }
   first() { //nampilin index pertama/0
     return this.range[0];
@@ -36,14 +35,16 @@ class Queue {
 }
 
 var ukur = new Queue(2);
-console.log(ukur.size());
-ukur.stackPush("Ganang")
-ukur.stackPush("Wahyu")
-ukur.stackPush("Wicaksono")
-console.log(ukur.stackPop());
+
+
+ukur.queuePush("Ganang")
+ukur.queuePush("Wahyu")
+ukur.queuePush("Wicaksono")
+console.log(ukur.queueShift());
 console.log(ukur.first());
 console.log(ukur.range);
 console.log(ukur.last())
 console.log(ukur.isEmpty());
 console.log(ukur.isFull());
 console.log(ukur.stackPeep());
+console.log(ukur.size());
